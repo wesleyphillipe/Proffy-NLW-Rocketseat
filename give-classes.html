@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="pt_br"><!-- lang é um atributo que vai definir a lingaguem  -->
+<head> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="theme-color" content="8257E5">
+
+    <title>Proffy | Sua plataforma de estudos Online</title>
+    
+    <!--Inclusão de uma logo no titulo-->
+    <link rel="shortcut icon" href="/images/favicon.png" type="image/png"> 
+
+    <!--link css-->
+    <link rel="stylesheet" href="/styles/main.css"> 
+    <link rel="stylesheet" href="/styles/partials/header.css"> 
+    <link rel="stylesheet" href="/styles/partials/forms.css"> 
+    <link rel="stylesheet" href="/styles/partials/page-give-classes.css"> 
+
+    <!--Link fonte-->
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;700&amp;family=Poppins:wght@400;600&amp;display=swap" rel="stylesheet">
+
+
+    <!--Declaração do Java Script. OBS: prefiro declarar no final do código.-->
+    <!--Script aonde clipa no botão e vai adicinar um campo-->
+    <script src="/scripts/addField.js" defer></script>
+
+
+</head>
+<body id="page-give-classes">
+
+    <div id="container">
+        <header class="page-header">
+
+            <div class="top-bar-container">
+                <a href="/">
+                    <img src="/images/icons/back.svg" alt="Voltar">
+                </a>
+
+                <img src="/images/logo.svg" alt="Proffy">
+            </div>
+
+            <div class="header-content">
+                <strong>Que incrívem que você deseja dar aulas</strong>
+
+                <p>O primeiro passo é você preencher o formulário de inscrição.</p>
+         
+        </header>
+
+        <main> 
+            <form action="" id="create-class">
+                
+                <!--Tag Fieldset utilizado para agrupamentod e dados no formulário-->
+                <!--Toda Fieldeset tem que ter a tag legend-->
+                <fieldset>
+                    <legend>Seus Dados</legend>
+
+                    <div class="input-block">
+                        <label for="name">Nome Completo</label>
+                        <input type="name" id="name" required>
+                    </div>
+
+                    <div class="input-block">
+                        <label for="avatar">Link da sua foto <small>(comece com https://)</small></label>
+                        <input type="avatar" id="avatar" type="url" required>
+                    </div>
+
+                    <div class="input-block">
+                        <label for="whatsapp">Whatsapp<small>(somente números)</small></label>
+                        <input type="whatsapp" id="whatsapp" type="number" required>
+                    </div>
+
+                    <div class="textarea-block">
+                        <label for="bio">Biografia</label>
+                        <textarea type="bio" id="bio"required></textarea>
+                    </div>
+
+                </fieldset>
+
+                <fieldset>
+
+                    <legend> Sobre a Aula</legend>
+
+                    <div class="select-block">
+                        <label for="subject">Matéria</label>
+                        <select name="subject" id="subject" required>
+                                <!--<option value="" disabled="" hidden="">Selecione uma opção</option>-->
+                                <option value="">Selecione uma opção</option>
+                                <option value="1">Artes</option>
+                                <option value="2">Biologia</option>
+                                <option value="3">Ciências</option>
+                                <option value="4">Educação física</option>
+                                <option value="5">Física</option>
+                                <option value="6">Geografia</option>
+                                <option value="7">História</option>
+                                <option value="8">Matemática</option>
+                                <option value="9">Português</option>
+                                <option value="10">Química</option>        
+                        </select>
+                    </div>
+
+                    <div class="input-block">
+                        <label for="cost">Custo da sua hora/aula
+                            <small>(R$)</small>
+                        </label>
+
+                        <input type="cost" id="cost" type="number" requerid>
+
+                    </div>
+
+                </fieldset>
+
+                <fieldset id="schedule-items">
+
+                    <legend> Horários Disponíveis
+                        <button type="button" id="add-time">+ Novo Horário</button>
+                    </legend>
+
+                    <div class="schedule-item">
+
+                        <div class="select-block">
+                            <label for="wekday">Dia da Semana</label>
+                            <!--o colchete abaixo indica que no backend a informação pode receber mais de um valor-->
+                            <select name="wekday[]" id="wekday" required>
+                                <!--<option value="" disabled="" hidden="">Selecione uma opção</option>-->
+                                <option value="">Selecione uma opção</option>
+                                <option value="1">Domingo</option>
+                                <option value="2">Segunda-Feira</option>
+                                <option value="3">Terça-Feira</option>
+                                <option value="4">Quarta-Feira física</option>
+                                <option value="5">Quinta-Feira</option>
+                                <option value="6">Sexta-Feira</option>
+                                <option value="7">Sábado</option>
+                            </select>
+                        </div>
+
+                        <div class="input-block">
+                            <label for="time_from">De</label>
+                            <input type="time" name="time_from[]" required>
+                        </div>
+
+                        <div class="input-block">
+                            <label for="time_to">Até</label>
+                            <input type="time" name="time_to[]" required>
+                        </div>
+
+                        
+                    </div>
+
+                </fieldset>
+
+               
+            </form>
+
+            <footer>
+                <p>
+                    <img src="/images/icons/warning.svg" alt="Aviso impotante">
+                    Importante! <br>
+                    Preencha todos os dados 
+                </p>
+                <!--quando tem um botão fora de um form e o memso irá enviar os dados, apenas colocar a informação form na
+                    declaração do botão passando o id do form já declarado-->
+                <button type="submit" form="create-class">Salvar Cadastro</button>
+            </footer>
+
+        </main>
+     
+    </div>
+
+    
+    
+</body>
+</html>
