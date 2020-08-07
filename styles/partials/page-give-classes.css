@@ -29,7 +29,7 @@
     color: var(--color-text-title);
     margin-bottom: 2.4rem;
 
-    display: center;
+    display: flex;
     justify-content: space-between;
 
     width: 100%;
